@@ -1,6 +1,6 @@
-# NoteWorthy
+# ReadRadar
 
-A secure and versatile password manager and generator designed to help you store all your passwords at one place.
+A book recommendation system which will help users to recommend few books related to the searched topic.
 
 ## Table of Contents
 
@@ -13,10 +13,10 @@ A secure and versatile password manager and generator designed to help you store
 
 ## Features
 
-- **Password Storage**: Securely store your passwords in an encrypted database.
-- **Password Generation**: Create strong, random passwords with customizable parameters.
-- **Cross-Platform**: Available on Windows, macOS, and Linux.
-- **User-Friendly Interface**: Intuitive and easy-to-use UI for managing passwords.
+- **Wishlist**: Users can wishlist any book they want.
+- **Chat Section**: Users can share their opinions on books in our chat section.
+- **Ratings**: Users can rate the book they are reading which will help other users to get the idea about the book.
+- **User-Friendly Interface**: Intuitive and easy-to-use UI.
 
 ## Getting Started
 
@@ -36,9 +36,10 @@ Windows 7,  Linux mint 16,  Mac OS X Yosemite or newer
 ## Usage
 
 1. Launch the application.
-2. Create a master password for your password vault.
-3. Add, view, edit, or delete passwords.
-4. Generate strong passwords with customizable settings.
+2. Search for the book you want to read
+3. Check all the info about the book
+4. Rate the book if you want
+5. Discuss about the book in our chat section
 
 
 
