@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+      
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <style>
+    .text-white {
+      color: rgb(255, 255, 255);
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+    }
+    .main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .outer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      background-color: black;
+      padding: 50px;
+      border-radius: 20px;
+    }
+    form {
+      width: 50%;
+      margin: 50px 30px;
+      display: flex;
+      justify-content: center;
+      row-gap: 20px;
+    }
+    #rec {
+      margin-right: 15px;
+    }
+  </style>
+  <meta charset="utf-8" />
+  <title>Flask Chat</title>
+</head>
+<body
+  style="
+    background-image: url('https://images.pexels.com/photos/1662277/pexels-photo-1662277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  "
+>
+  <div class="outer">
+    <div id="chat"></div>
+    <div class="main">
+      <form id="chat-form">
+        <input type="text" name="receiver" id="rec" placeholder="Receiver" />
+        <input type="text" name="message" id="rec" placeholder="Message" />
+        <input class="btn btn-lg btn-warning" type="submit" value="Send" />
+      </form>
+    </div>
+  </div>
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port, {
+            query: {username: prompt('Enter your username:')}
+        });
+
+        socket.on('status', function(data) {
+            var chat_div = document.getElementById('chat');
+            chat_div.innerHTML += '<p class= "text-white"><em>' + data['msg'] + '</em></p>';
+        });
+
+        socket.on('chat', function(data) {
+            var sender = data['sender'];
+            var receiver = data['receiver'];
+            var message = data['message'];
+            var chat_div = document.getElementById('chat');
+            chat_div.innerHTML += '<p class= "text-white"><strong>' + sender + ' to ' + receiver + ': </strong>' + message + '</p>';
+        });
+
+        document.getElementById('chat-form').onsubmit = function(event) {
+            event.preventDefault();
+            var form_data = new FormData(document.getElementById('chat-form'));
+            socket.send({'receiver': form_data.get('receiver'), 'message': form_data.get('message')});
+            document.getElementById('chat-form').reset();
+        };
+    </script>
+</body>
+</html>
