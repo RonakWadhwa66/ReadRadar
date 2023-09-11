@@ -45,13 +45,13 @@ Windows 7,  Linux mint 16,  Mac OS X Yosemite or newer
 
 ## Screenshots
 Home Page:
-![image](https://github.com/RonakWadhwa66/NoteWorthy/assets/88489591/81031a43-bd5b-4ce0-a2b5-f57e7262c351)
+![image](1.jpg)
 
-Sign in Screen:
-![image](https://github.com/RonakWadhwa66/NoteWorthy/assets/88489591/1244c731-bfbe-48db-8919-79e4692a2e9a)
+Recommend page:
+![image](2.jpg)
 
-Stored Passwords Page:
-![image](https://github.com/RonakWadhwa66/NoteWorthy/assets/88489591/82974c4b-4a0e-4fd5-9a59-99acbfe2514e)
+Rating page:
+![image](3.jpg)
 
-Password Generator:
-![image](https://github.com/RonakWadhwa66/NoteWorthy/assets/88489591/9a02e034-54a7-436f-8057-d00a9c4673f9)
+Chat section:
+![image](4.jpg)
